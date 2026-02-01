@@ -1,0 +1,1187 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NOVAWEAR｜奶油粉韓系服飾</title>
+
+  <!-- Google Fonts: Noto Sans TC + Material Symbols -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800;900&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      /* Material Pink (MUI palette) */
+      --p50:#fce4ec;
+      --p100:#f8bbd0;
+      --p200:#f48fb1;
+      --p300:#f06292;
+      --p400:#ec407a;
+      --p500:#e91e63;
+      --p600:#d81b60;
+
+      /* Creamy Korean vibe */
+      --bg:#fff7fa;
+      --surface:#ffffff;
+      --surface2:#fffdfb;
+      --ink:#2b2b2b;
+      --muted:rgba(43,43,43,.62);
+      --border:rgba(233,30,99,.14);
+
+      --primary:var(--p400);
+      --primary2:var(--p500);
+      --accent:var(--p200);
+
+      --shadow: 0 18px 44px rgba(233,30,99,.10), 0 8px 18px rgba(0,0,0,.04);
+      --shadow2: 0 10px 26px rgba(0,0,0,.06);
+
+      --r:20px;
+      --r2:28px;
+      --max:1120px;
+    }
+
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      font-family:"Noto Sans TC", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(1100px 500px at 12% -10%, rgba(244,143,177,.22), transparent 60%),
+        radial-gradient(900px 450px at 90% 0%, rgba(248,187,208,.20), transparent 55%),
+        var(--bg);
+    }
+    a{ color:inherit; text-decoration:none; }
+    img{ max-width:100%; display:block; }
+
+    .container{ width:min(var(--max), calc(100% - 40px)); margin:0 auto; }
+    .muted{ color:var(--muted); }
+
+    .icon{
+      font-family:"Material Symbols Outlined";
+      font-variation-settings: 'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;
+      font-size:20px; line-height:1;
+    }
+
+    /* Buttons (韓系：圓潤、柔陰影、hover 不要太兇) */
+    .btn{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:12px 16px; border-radius:999px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.78);
+      cursor:pointer; font-weight:900;
+      transition:transform .12s ease, box-shadow .14s ease, background .14s ease, border-color .14s ease;
+      user-select:none;
+      backdrop-filter: blur(10px);
+    }
+    .btn:hover{ transform:translateY(-1px); box-shadow:var(--shadow2); }
+    .btn:active{ transform:translateY(0); box-shadow:none; }
+
+    .btn.primary{
+      background:linear-gradient(135deg, var(--primary), var(--primary2));
+      border-color:transparent;
+      color:#fff;
+      box-shadow: 0 16px 34px rgba(233,30,99,.18);
+    }
+    .btn.primary:hover{ box-shadow: 0 20px 40px rgba(233,30,99,.22); }
+
+    .btn.soft{
+      background:rgba(252,228,236,.75);
+      border-color:rgba(233,30,99,.16);
+    }
+
+    .chip{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:9px 12px; border-radius:999px;
+      border:1px solid rgba(233,30,99,.14);
+      background:rgba(252,228,236,.62);
+      backdrop-filter: blur(10px);
+      font-weight:900; font-size:13px;
+      color:rgba(60,20,34,.92);
+    }
+
+    /* Cards */
+    .card{
+      background:linear-gradient(180deg, var(--surface), var(--surface2));
+      border:1px solid rgba(233,30,99,.12);
+      border-radius:var(--r2);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+
+    /* Header */
+    header{
+      position:sticky; top:0; z-index:60;
+      background:rgba(255,247,250,.72);
+      backdrop-filter: blur(12px);
+      border-bottom:1px solid rgba(233,30,99,.10);
+    }
+    .topbar{
+      padding:10px 0 6px;
+    }
+    .topbar .container{
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+    }
+    .notice{
+      display:flex; align-items:center; gap:10px;
+      font-weight:900; color:rgba(60,20,34,.92);
+    }
+    .notice small{ color:var(--muted); font-weight:800; }
+
+    .top-actions{ display:flex; align-items:center; gap:10px; }
+    .badge{
+      display:inline-flex; align-items:center; justify-content:center;
+      min-width:22px; height:22px; padding:0 6px;
+      border-radius:999px;
+      background:linear-gradient(135deg, var(--p400), var(--p600));
+      color:#fff; font-size:12px; font-weight:1000;
+    }
+
+    .nav{
+      padding:10px 0 12px;
+    }
+    .nav .container{
+      display:flex; align-items:center; justify-content:space-between; gap:14px;
+    }
+
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight:1000; letter-spacing:.6px;
+    }
+    .logo{
+      width:38px; height:38px; border-radius:14px;
+      background:
+        radial-gradient(circle at 30% 30%, rgba(255,255,255,.55), transparent 40%),
+        linear-gradient(135deg, rgba(244,143,177,.9), rgba(233,30,99,.9));
+      box-shadow:0 16px 30px rgba(233,30,99,.14);
+    }
+    .brand .sub{ font-size:12px; font-weight:900; color:rgba(60,20,34,.75); }
+
+    .navlinks{
+      display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+      background:rgba(255,255,255,.62);
+      border:1px solid rgba(233,30,99,.10);
+      border-radius:999px;
+      padding:6px;
+      backdrop-filter: blur(10px);
+    }
+    .navlinks a{
+      padding:10px 12px; border-radius:999px;
+      font-weight:1000; font-size:13px;
+      color:rgba(60,20,34,.86);
+      transition:background .14s ease;
+    }
+    .navlinks a.active{
+      background:rgba(252,228,236,.75);
+      box-shadow:0 10px 18px rgba(233,30,99,.10);
+    }
+
+    .iconbtn{
+      width:44px; height:44px; border-radius:999px;
+      border:1px solid rgba(233,30,99,.12);
+      background:rgba(255,255,255,.72);
+      display:grid; place-items:center;
+      cursor:pointer;
+      transition:transform .12s ease, box-shadow .14s ease, background .14s ease;
+      backdrop-filter: blur(10px);
+    }
+    .iconbtn:hover{ transform:translateY(-1px); box-shadow:var(--shadow2); }
+
+    /* Sections */
+    .section{ padding:70px 0; }
+    .title{
+      display:flex; align-items:flex-end; justify-content:space-between; gap:12px;
+      margin-bottom:18px;
+    }
+    .title h2{ margin:0; font-size:28px; letter-spacing:.4px; }
+    .title p{ margin:0; color:var(--muted); font-weight:800; }
+
+    /* Hero */
+    .hero{ padding:26px 0 56px; }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap:16px;
+      align-items:stretch;
+    }
+    .hero-copy{
+      padding:28px;
+      display:flex; flex-direction:column; gap:14px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero-copy:before{
+      content:"";
+      position:absolute; inset:-40px -40px auto auto;
+      width:180px; height:180px; border-radius:999px;
+      background:radial-gradient(circle at 30% 30%, rgba(244,143,177,.28), rgba(244,143,177,0) 70%);
+      transform: rotate(10deg);
+    }
+    .hero-copy h1{
+      margin:0;
+      font-size:42px;
+      line-height:1.12;
+      letter-spacing:.4px;
+      color:rgba(60,20,34,.96);
+    }
+    .hero-copy .sub{
+      margin:0;
+      color:rgba(60,20,34,.68);
+      font-weight:800;
+      line-height:1.85;
+    }
+    .hero-actions{ display:flex; gap:12px; flex-wrap:wrap; margin-top:8px; }
+    .trust{ display:flex; gap:10px; flex-wrap:wrap; margin-top:auto; }
+
+    .hero-media{ position:relative; }
+    .hero-media img{ width:100%; height:100%; object-fit:cover; }
+    .hero-media:after{
+      content:"";
+      position:absolute; inset:0;
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(233,30,99,.10));
+      pointer-events:none;
+    }
+    .hero-float{
+      position:absolute; left:14px; bottom:14px;
+      display:flex; gap:10px; flex-wrap:wrap;
+    }
+
+    /* Category tiles */
+    .grid-3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+    }
+    .tile{ position:relative; min-height:170px; }
+    .tile img{ width:100%; height:100%; object-fit:cover; }
+    .tile .overlay{
+      position:absolute; inset:0;
+      background:linear-gradient(180deg, rgba(0,0,0,.02), rgba(0,0,0,.35));
+      display:flex; flex-direction:column; justify-content:flex-end;
+      padding:16px;
+      color:#fff;
+    }
+    .tile .overlay strong{ font-size:18px; }
+    .tile .overlay span{ opacity:.92; font-weight:800; }
+
+    /* Products */
+    .toolbar{
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      margin:14px 0 18px;
+      flex-wrap:wrap;
+    }
+    .filters{ display:flex; gap:10px; flex-wrap:wrap; }
+    .filters button{
+      background:rgba(255,255,255,.72);
+      border:1px solid rgba(233,30,99,.14);
+      border-radius:999px; padding:10px 12px;
+      cursor:pointer; font-weight:1000;
+      transition:background .14s ease, transform .12s ease;
+      backdrop-filter: blur(10px);
+    }
+    .filters button:hover{ transform:translateY(-1px); }
+    .filters button.active{
+      border-color:transparent;
+      background:rgba(252,228,236,.78);
+      box-shadow:0 12px 20px rgba(233,30,99,.10);
+    }
+    .sort{
+      display:flex; align-items:center; gap:10px;
+      background:rgba(255,255,255,.72);
+      border:1px solid rgba(233,30,99,.14);
+      border-radius:999px; padding:10px 12px;
+      font-weight:1000;
+      backdrop-filter: blur(10px);
+    }
+    select{ border:none; outline:none; background:transparent; font-weight:1000; color:rgba(60,20,34,.86); }
+
+    .grid-4{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:14px;
+    }
+    .p-card{ overflow:hidden; }
+    .p-img{ position:relative; aspect-ratio: 4/5; background:#f6f0f2; }
+    .p-img img{ width:100%; height:100%; object-fit:cover; }
+    .p-tag{
+      position:absolute; top:12px; left:12px;
+      padding:8px 10px; border-radius:999px;
+      background:rgba(255,255,255,.80);
+      border:1px solid rgba(233,30,99,.14);
+      font-size:12px; font-weight:1000;
+      color:rgba(60,20,34,.86);
+      backdrop-filter: blur(10px);
+    }
+    .p-actions{
+      position:absolute; top:12px; right:12px;
+      display:flex; flex-direction:column; gap:10px;
+    }
+    .p-actions .iconbtn{ width:40px; height:40px; }
+    .p-body{ padding:14px; display:flex; flex-direction:column; gap:8px; }
+    .p-name{ font-weight:1000; color:rgba(60,20,34,.96); }
+    .p-meta{ display:flex; align-items:center; justify-content:space-between; gap:10px; }
+    .price{ font-weight:1000; color:rgba(60,20,34,.96); }
+    .strike{ text-decoration:line-through; color:var(--muted); font-weight:900; margin-left:6px; }
+    .p-btn{ width:100%; justify-content:center; }
+
+    /* Lookbook */
+    .hscroll{
+      display:grid;
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(240px, 1fr);
+      gap:14px;
+      overflow:auto;
+      padding-bottom:6px;
+      scroll-snap-type: x mandatory;
+    }
+    .look{ scroll-snap-align: start; }
+    .look img{ width:100%; height:240px; object-fit:cover; }
+    .look .cap{ padding:12px 14px; font-weight:1000; color:rgba(60,20,34,.88); }
+
+    /* Reviews */
+    .review{
+      padding:18px;
+      display:flex; flex-direction:column; gap:10px;
+      min-height:170px;
+    }
+    .review-nav{ display:flex; gap:10px; }
+
+    /* FAQ */
+    .faq{ display:grid; grid-template-columns: 1fr 1fr; gap:14px; }
+    details{
+      background:rgba(255,255,255,.78);
+      border:1px solid rgba(233,30,99,.14);
+      border-radius:var(--r);
+      padding:14px 14px;
+      backdrop-filter: blur(10px);
+    }
+    summary{ cursor:pointer; font-weight:1000; color:rgba(60,20,34,.92); }
+    details p{ margin:10px 0 0; color:rgba(60,20,34,.70); font-weight:800; line-height:1.8; }
+
+    /* Contact */
+    form{ display:grid; grid-template-columns: 1fr 1fr; gap:12px; }
+    input, textarea{
+      width:100%;
+      padding:12px 14px;
+      border-radius:16px;
+      border:1px solid rgba(233,30,99,.14);
+      outline:none;
+      font:inherit;
+      background:rgba(255,255,255,.78);
+      backdrop-filter: blur(10px);
+    }
+    textarea{ grid-column: 1 / -1; min-height:120px; resize:vertical; }
+
+    /* Footer */
+    footer{
+      padding:30px 0 42px;
+      border-top:1px solid rgba(233,30,99,.10);
+      background:rgba(255,255,255,.58);
+      backdrop-filter: blur(12px);
+    }
+    .foot{
+      display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap;
+      font-weight:900;
+    }
+    .foot small{ color:var(--muted); font-weight:800; }
+
+    /* Drawer (cart) */
+    .backdrop{
+      position:fixed; inset:0;
+      background:rgba(0,0,0,.34);
+      opacity:0; pointer-events:none;
+      transition:opacity .18s ease;
+      z-index:80;
+    }
+    .backdrop.open{ opacity:1; pointer-events:auto; }
+    .drawer{
+      position:fixed; top:0; right:0; height:100%; width:min(420px, 92vw);
+      background:linear-gradient(180deg, rgba(255,255,255,.96), rgba(255,253,251,.98));
+      border-left:1px solid rgba(233,30,99,.14);
+      transform:translateX(100%);
+      transition:transform .18s ease;
+      z-index:90;
+      display:flex; flex-direction:column;
+      backdrop-filter: blur(12px);
+    }
+    .drawer.open{ transform:translateX(0); }
+    .drawer-head{
+      padding:16px 16px;
+      border-bottom:1px solid rgba(233,30,99,.12);
+      display:flex; align-items:center; justify-content:space-between;
+      font-weight:1000; color:rgba(60,20,34,.92);
+    }
+    .drawer-body{ padding:14px 16px; overflow:auto; display:flex; flex-direction:column; gap:12px; }
+    .cart-item{
+      display:grid; grid-template-columns: 64px 1fr auto;
+      gap:10px;
+      align-items:center;
+      border:1px solid rgba(233,30,99,.12);
+      border-radius:18px;
+      padding:10px;
+      background:rgba(252,228,236,.35);
+    }
+    .cart-item img{ width:64px; height:64px; border-radius:16px; object-fit:cover; }
+    .cart-item .nm{ font-weight:1000; color:rgba(60,20,34,.92); }
+    .qty{ display:flex; align-items:center; gap:8px; }
+    .qty button{
+      width:32px; height:32px; border-radius:12px;
+      border:1px solid rgba(233,30,99,.14);
+      background:rgba(255,255,255,.78);
+      cursor:pointer; font-weight:1000;
+      backdrop-filter: blur(10px);
+    }
+    .drawer-foot{
+      border-top:1px solid rgba(233,30,99,.12);
+      padding:14px 16px;
+      display:flex; flex-direction:column; gap:10px;
+    }
+    .tot{ display:flex; align-items:center; justify-content:space-between; font-weight:1000; color:rgba(60,20,34,.92); }
+
+    /* Modal (newsletter) */
+    .modal{
+      position:fixed; inset:0;
+      display:grid; place-items:center;
+      opacity:0; pointer-events:none;
+      transition:opacity .18s ease;
+      z-index:100;
+    }
+    .modal.open{ opacity:1; pointer-events:auto; }
+    .modal .panel{
+      width:min(560px, 92vw);
+      background:linear-gradient(180deg, rgba(255,255,255,.98), rgba(255,253,251,.98));
+      border:1px solid rgba(233,30,99,.14);
+      border-radius:30px;
+      box-shadow:0 28px 90px rgba(233,30,99,.18);
+      overflow:hidden;
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      backdrop-filter: blur(12px);
+    }
+    .panel .mimg{ background:#f6f0f2; }
+    .panel .mimg img{ width:100%; height:100%; object-fit:cover; }
+    .panel .mbody{ padding:18px; display:flex; flex-direction:column; gap:10px; }
+    .panel h3{ margin:0; font-size:20px; color:rgba(60,20,34,.96); }
+    .panel p{ margin:0; color:rgba(60,20,34,.70); font-weight:800; line-height:1.8; }
+
+    .coupon{
+      display:flex; align-items:center; justify-content:space-between;
+      border:1px dashed rgba(233,30,99,.38);
+      background:rgba(252,228,236,.55);
+      padding:10px 12px;
+      border-radius:18px;
+      font-weight:1000;
+      color:rgba(60,20,34,.92);
+    }
+
+    /* Mobile dock (更像多分頁切換) */
+    .dock{
+      position:fixed; left:50%; bottom:14px;
+      transform:translateX(-50%);
+      display:none; gap:8px;
+      padding:8px;
+      background:rgba(255,255,255,.78);
+      border:1px solid rgba(233,30,99,.12);
+      border-radius:999px;
+      box-shadow: var(--shadow2);
+      backdrop-filter: blur(12px);
+      z-index:70;
+    }
+    .dock a, .dock button{
+      border:none; background:transparent; cursor:pointer;
+      display:flex; align-items:center; gap:8px;
+      padding:10px 12px; border-radius:999px;
+      font-weight:1000; color:rgba(60,20,34,.86);
+    }
+    .dock a.active{ background:rgba(252,228,236,.70); }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .hero-grid{ grid-template-columns: 1fr; }
+      .grid-4{ grid-template-columns: repeat(2, 1fr); }
+      .grid-3{ grid-template-columns: 1fr; }
+      .faq{ grid-template-columns: 1fr; }
+      form{ grid-template-columns: 1fr; }
+      .modal .panel{ grid-template-columns: 1fr; }
+      .panel .mimg{ display:none; }
+      .navlinks{ display:none; }
+      .dock{ display:flex; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="topbar">
+      <div class="container">
+        <div class="notice">
+          <span class="icon">local_shipping</span>
+          全館滿 NT$1,200 免運 <small>｜30 天安心退</small>
+        </div>
+        <div class="top-actions">
+          <button class="btn soft" id="openNewsletter"><span class="icon">local_offer</span>領 9 折</button>
+          <button class="btn" id="openCartTop"><span class="icon">shopping_bag</span>購物車 <span class="badge" id="cartCountTop">0</span></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav">
+      <div class="container">
+        <div class="brand">
+          <div class="logo" aria-hidden="true"></div>
+          <div>
+            <div style="line-height:1;">NOVAWEAR</div>
+            <div class="sub">奶油粉・韓系確幸選品</div>
+          </div>
+        </div>
+
+        <nav class="navlinks" id="navlinks">
+          <a href="#home" class="active">首頁</a>
+          <a href="#categories">分類</a>
+          <a href="#products">新品</a>
+          <a href="#lookbook">穿搭</a>
+          <a href="#reviews">評價</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">聯絡</a>
+        </nav>
+
+        <div style="display:flex; gap:10px; align-items:center;">
+          <button class="iconbtn" id="openSearch" title="快速搜尋"><span class="icon">search</span></button>
+          <button class="iconbtn" id="openCart" title="購物車"><span class="icon">shopping_bag</span></button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main class="hero" id="home">
+    <div class="container hero-grid">
+      <section class="card hero-copy">
+        <span class="chip"><span class="icon">favorite</span> 本週熱賣｜春日奶油粉</span>
+        <h1>穿得溫柔，<br>看起來超有氣質。</h1>
+        <p class="sub">
+          走「乾淨、奶、柔」路線：好搭、好洗、每天都想穿。
+          <br>（單檔 Demo：篩選/排序/購物車抽屜/訂閱領券彈窗）
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="#products"><span class="icon">shopping_cart_checkout</span>逛新品</a>
+          <a class="btn" href="#lookbook"><span class="icon">photo_library</span>看穿搭</a>
+          <button class="btn soft" id="openCartHero"><span class="icon">shopping_bag</span>打開購物車</button>
+        </div>
+
+        <div class="trust">
+          <span class="chip"><span class="icon">schedule</span>48h 出貨</span>
+          <span class="chip"><span class="icon">cached</span>30 天退換</span>
+          <span class="chip"><span class="icon">verified_user</span>安全付款</span>
+        </div>
+      </section>
+
+      <section class="card hero-media">
+        <img alt="Hero look"
+             src="https://images.pexels.com/photos/4602025/pexels-photo-4602025.jpeg?cs=srgb&dl=pexels-anne-r-168988-4602025.jpg&fm=jpg" />
+        <div class="hero-float">
+          <span class="chip"><span class="icon">new_releases</span>Top 8 必收</span>
+          <span class="chip"><span class="icon">star</span>4.8/5 平均評分</span>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Mobile dock -->
+  <div class="dock" id="dock">
+    <a href="#home"><span class="icon">home</span></a>
+    <a href="#products"><span class="icon">storefront</span></a>
+    <a href="#lookbook"><span class="icon">photo_library</span></a>
+    <button id="openCartDock" aria-label="cart"><span class="icon">shopping_bag</span><span class="badge" id="cartCountDock">0</span></button>
+  </div>
+
+  <!-- Categories -->
+  <section class="section" id="categories">
+    <div class="container">
+      <div class="title">
+        <div>
+          <h2>分類精選</h2>
+          <p>一頁式，但每區像一個分頁：輕輕滑就切換。</p>
+        </div>
+        <a class="btn soft" href="#products"><span class="icon">north_east</span>直接看商品</a>
+      </div>
+
+      <div class="grid-3">
+        <a class="card tile" href="#products" data-filter="WOMEN" title="女裝">
+          <img alt="女裝"
+               src="https://images.pexels.com/photos/33692583/pexels-photo-33692583.jpeg?cs=srgb&dl=pexels-peterdanthy-33692583.jpg&fm=jpg">
+          <div class="overlay">
+            <strong>女裝</strong>
+            <span>奶油系剪裁｜一件就出門</span>
+          </div>
+        </a>
+
+        <a class="card tile" href="#products" data-filter="MEN" title="男裝">
+          <img alt="男裝"
+               src="https://images.pexels.com/photos/19881716/pexels-photo-19881716.jpeg?cs=srgb&dl=pexels-bigshowlamar-19881716.jpg&fm=jpg">
+          <div class="overlay">
+            <strong>男裝</strong>
+            <span>乾淨中性｜耐穿耐洗</span>
+          </div>
+        </a>
+
+        <a class="card tile" href="#products" data-filter="ACCESSORY" title="配件">
+          <img alt="配件"
+               src="https://images.pexels.com/photos/34076070/pexels-photo-34076070.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1200">
+          <div class="overlay">
+            <strong>配件</strong>
+            <span>包・鞋・小物｜完成度 +30%</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section class="section" id="products">
+    <div class="container">
+      <div class="title">
+        <div>
+          <h2>新品上架</h2>
+          <p class="muted">可篩選分類、排序價格，並加入購物車。</p>
+        </div>
+        <button class="btn soft" id="openCartProducts"><span class="icon">shopping_bag</span>查看購物車</button>
+      </div>
+
+      <div class="toolbar">
+        <div class="filters" id="filters">
+          <button class="active" data-filter="ALL">全部</button>
+          <button data-filter="WOMEN">女裝</button>
+          <button data-filter="MEN">男裝</button>
+          <button data-filter="ACCESSORY">配件</button>
+        </div>
+
+        <div class="sort">
+          <span class="icon">sort</span>
+          <span>排序</span>
+          <select id="sort">
+            <option value="POPULAR">人氣</option>
+            <option value="PRICE_ASC">價格：低 → 高</option>
+            <option value="PRICE_DESC">價格：高 → 低</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="grid-4" id="productGrid"></div>
+    </div>
+  </section>
+
+  <!-- Lookbook -->
+  <section class="section" id="lookbook">
+    <div class="container">
+      <div class="title">
+        <div>
+          <h2>穿搭 Lookbook</h2>
+          <p class="muted">橫向滑動像「第二個分頁」。</p>
+        </div>
+        <button class="btn primary" id="openNewsletter2"><span class="icon">mail</span>訂閱拿 9 折</button>
+      </div>
+
+      <div class="hscroll">
+        <div class="card look">
+          <img alt="look1" src="https://images.pexels.com/photos/4602025/pexels-photo-4602025.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1200">
+          <div class="cap">粉格紋日常｜溫柔但有記憶點</div>
+        </div>
+        <div class="card look">
+          <img alt="look2" src="https://images.pexels.com/photos/33692583/pexels-photo-33692583.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1200">
+          <div class="cap">奶油白連身｜氣質不費力</div>
+        </div>
+        <div class="card look">
+          <img alt="look3" src="https://images.pexels.com/photos/19881716/pexels-photo-19881716.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1200">
+          <div class="cap">中性米色套裝｜乾淨耐看</div>
+        </div>
+        <div class="card look">
+          <img alt="look4" src="https://images.pexels.com/photos/34076070/pexels-photo-34076070.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1200">
+          <div class="cap">包鞋小物｜把細節拉滿</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="section" id="reviews">
+    <div class="container">
+      <div class="title">
+        <div>
+          <h2>買家評價</h2>
+          <p class="muted">自動輪播，像「第三個分頁」。</p>
+        </div>
+        <div class="review-nav">
+          <button class="btn soft" id="prevReview"><span class="icon">chevron_left</span>上一則</button>
+          <button class="btn soft" id="nextReview">下一則<span class="icon">chevron_right</span></button>
+        </div>
+      </div>
+
+      <div class="card review" id="reviewBox"></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="title">
+        <div>
+          <h2>常見問題</h2>
+          <p class="muted">折疊式 FAQ，乾淨省版面。</p>
+        </div>
+      </div>
+
+      <div class="faq">
+        <details open>
+          <summary>多久出貨？</summary>
+          <p>現貨 48 小時內出貨；預購商品會在商品頁標示到貨日。</p>
+        </details>
+        <details>
+          <summary>退換貨規則？</summary>
+          <p>收到商品起算 30 天內可申請。商品需保持完整（吊牌/未下水/未明顯使用）。</p>
+        </details>
+        <details>
+          <summary>尺寸不確定怎麼辦？</summary>
+          <p>每件商品都有尺寸表；你也可以用「聯絡我們」留下身高體重與想要的穿著感。</p>
+        </details>
+        <details>
+          <summary>有沒有折扣？</summary>
+          <p>訂閱電子報可拿首購 9 折碼（示範彈窗）。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="title">
+        <div>
+          <h2>聯絡我們</h2>
+          <p class="muted">這裡可接你的後端 API 或第三方表單。</p>
+        </div>
+      </div>
+
+      <div class="card" style="padding:16px;">
+        <form id="contactForm">
+          <input required placeholder="姓名" />
+          <input required placeholder="Email" type="email" />
+          <textarea required placeholder="想問什麼？（尺寸/搭配/出貨/合作）"></textarea>
+          <button class="btn primary" type="submit"><span class="icon">send</span>送出</button>
+          <button class="btn soft" type="button" id="openNewsletter3"><span class="icon">local_offer</span>先領券再說</button>
+        </form>
+        <p class="muted" style="margin:10px 0 0; font-weight:900;">
+          提示：此 Demo 不會真的送出資料（你可以把 submit 改成呼叫你的 API）。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container foot">
+      <div>
+        <div style="font-weight:1100; color:rgba(60,20,34,.96);">NOVAWEAR</div>
+        <small>© <span id="year"></span> NOVAWEAR. All rights reserved.</small>
+      </div>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a class="chip" href="#products"><span class="icon">shopping_bag</span>逛商品</a>
+        <a class="chip" href="#lookbook"><span class="icon">photo_library</span>看穿搭</a>
+        <a class="chip" href="#contact"><span class="icon">support_agent</span>客服</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Backdrop + Cart Drawer -->
+  <div class="backdrop" id="backdrop"></div>
+  <aside class="drawer" id="drawer">
+    <div class="drawer-head">
+      <div><span class="icon">shopping_bag</span> 購物車</div>
+      <button class="iconbtn" id="closeDrawer" aria-label="close"><span class="icon">close</span></button>
+    </div>
+
+    <div class="drawer-body" id="cartList"></div>
+
+    <div class="drawer-foot">
+      <div class="tot">
+        <span>小計</span>
+        <span id="cartTotal">NT$0</span>
+      </div>
+      <button class="btn primary" id="checkoutBtn"><span class="icon">shopping_cart_checkout</span>結帳（示範）</button>
+      <button class="btn soft" id="clearCartBtn"><span class="icon">delete</span>清空</button>
+    </div>
+  </aside>
+
+  <!-- Newsletter Modal -->
+  <div class="modal" id="modal">
+    <div class="backdrop open" id="modalBackdrop" style="opacity:1;"></div>
+    <div class="panel">
+      <div class="mimg">
+        <img alt="newsletter" src="https://images.pexels.com/photos/4602025/pexels-photo-4602025.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1200">
+      </div>
+      <div class="mbody">
+        <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:10px;">
+          <div>
+            <h3>訂閱領 9 折</h3>
+            <p>離開前先拿折扣碼（示範 exit-intent / 延遲彈窗）。</p>
+          </div>
+          <button class="iconbtn" id="closeModal" aria-label="close"><span class="icon">close</span></button>
+        </div>
+
+        <div class="coupon">
+          <span>折扣碼</span>
+          <span style="color:var(--primary2);">NOVA9</span>
+        </div>
+
+        <input id="emailInput" type="email" placeholder="輸入 Email（示範，不會真的送出）" />
+        <button class="btn primary" id="claimBtn"><span class="icon">mail</span>領取折扣</button>
+        <button class="btn soft" id="laterBtn">稍後再說</button>
+
+        <small class="muted" style="font-weight:900;">
+          你可改成串任何 EDM 工具。此 Demo 只示範互動流程。
+        </small>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // --- Data ---
+    const PRODUCTS = [
+      { id:"P001", name:"奶油粉格紋上衣（柔軟棉）", cat:"WOMEN", price:690, compare:890, tag:"NEW",
+        img:"https://images.pexels.com/photos/4602025/pexels-photo-4602025.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1200" },
+      { id:"P002", name:"奶油白針織罩衫（微透感）", cat:"WOMEN", price:980, compare:1280, tag:"BEST",
+        img:"https://images.pexels.com/photos/33692583/pexels-photo-33692583.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1200" },
+      { id:"P003", name:"米色休閒套裝（韓系中性）", cat:"MEN", price:1280, compare:1580, tag:"HOT",
+        img:"https://images.pexels.com/photos/19881716/pexels-photo-19881716.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1200" },
+      { id:"P004", name:"出門必備｜包鞋小物組", cat:"ACCESSORY", price:520, compare:720, tag:"NEW",
+        img:"https://images.pexels.com/photos/34076070/pexels-photo-34076070.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1200" },
+      { id:"P005", name:"奶油白 Tee（修身版）", cat:"MEN", price:560, compare:760, tag:"BEST",
+        img:"https://images.pexels.com/photos/19881716/pexels-photo-19881716.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1200" },
+      { id:"P006", name:"溫柔粉系襯衫（好搭）", cat:"WOMEN", price:790, compare:990, tag:"HOT",
+        img:"https://images.pexels.com/photos/4602025/pexels-photo-4602025.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1200" },
+      { id:"P007", name:"極簡米白長裙（顯腿長）", cat:"WOMEN", price:620, compare:820, tag:"NEW",
+        img:"https://images.pexels.com/photos/33692583/pexels-photo-33692583.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1200" },
+      { id:"P008", name:"奶油系小包（輕便耐背）", cat:"ACCESSORY", price:880, compare:1080, tag:"BEST",
+        img:"https://images.pexels.com/photos/34076070/pexels-photo-34076070.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1200" },
+    ];
+
+    const fmt = n => "NT$" + n.toLocaleString("zh-Hant-TW");
+    const qs = s => document.querySelector(s);
+    const qsa = s => [...document.querySelectorAll(s)];
+
+    // --- Cart state ---
+    const CART_KEY = "novawear_cart_v2";
+    const loadCart = () => { try { return JSON.parse(localStorage.getItem(CART_KEY) || "{}"); } catch { return {}; } };
+    const saveCart = (cart) => localStorage.setItem(CART_KEY, JSON.stringify(cart));
+
+    let cart = loadCart();
+    let filter = "ALL";
+    let sort = "POPULAR";
+
+    // --- Render products ---
+    function getFilteredProducts(){
+      let list = PRODUCTS.slice();
+      if(filter !== "ALL") list = list.filter(p => p.cat === filter);
+      if(sort === "PRICE_ASC") list.sort((a,b)=>a.price-b.price);
+      if(sort === "PRICE_DESC") list.sort((a,b)=>b.price-a.price);
+      return list;
+    }
+
+    function productCard(p){
+      return `
+        <article class="card p-card">
+          <div class="p-img">
+            <img alt="${p.name}" src="${p.img}">
+            <div class="p-tag">${p.tag}</div>
+            <div class="p-actions">
+              <button class="iconbtn" data-like="${p.id}" title="收藏"><span class="icon">favorite</span></button>
+              <button class="iconbtn" data-quick="${p.id}" title="快速看"><span class="icon">visibility</span></button>
+            </div>
+          </div>
+          <div class="p-body">
+            <div class="p-name">${p.name}</div>
+            <div class="p-meta">
+              <div class="price">${fmt(p.price)} <span class="strike">${fmt(p.compare)}</span></div>
+            </div>
+            <button class="btn primary p-btn" data-add="${p.id}">
+              <span class="icon">add_shopping_cart</span>加入購物車
+            </button>
+          </div>
+        </article>
+      `;
+    }
+
+    function renderProducts(){
+      qs("#productGrid").innerHTML = getFilteredProducts().map(productCard).join("");
+    }
+
+    // --- Cart UI ---
+    function cartCount(){ return Object.values(cart).reduce((sum, it)=> sum + it.qty, 0); }
+    function cartTotal(){ return Object.values(cart).reduce((sum, it)=> sum + it.qty * it.price, 0); }
+    function updateCartBadges(){
+      const n = cartCount();
+      qs("#cartCountTop").textContent = n;
+      qs("#cartCountDock").textContent = n;
+    }
+
+    function renderCart(){
+      const list = qs("#cartList");
+      const items = Object.values(cart);
+
+      if(items.length === 0){
+        list.innerHTML = `
+          <div class="card" style="padding:14px; border-radius:18px;">
+            <div style="font-weight:1100; display:flex; gap:10px; align-items:center; color:rgba(60,20,34,.92);">
+              <span class="icon">shopping_bag</span> 你的購物車是空的
+            </div>
+            <p class="muted" style="margin:8px 0 0; font-weight:900;">去「新品上架」挑幾件吧。</p>
+          </div>
+        `;
+      }else{
+        list.innerHTML = items.map(it => `
+          <div class="cart-item">
+            <img alt="" src="${it.img}">
+            <div>
+              <div class="nm">${it.name}</div>
+              <div class="muted" style="font-weight:900; margin-top:2px;">${fmt(it.price)}</div>
+            </div>
+            <div class="qty">
+              <button data-dec="${it.id}">−</button>
+              <div style="min-width:18px; text-align:center; font-weight:1100; color:rgba(60,20,34,.92);">${it.qty}</div>
+              <button data-inc="${it.id}">＋</button>
+            </div>
+          </div>
+        `).join("");
+      }
+
+      qs("#cartTotal").textContent = fmt(cartTotal());
+      updateCartBadges();
+    }
+
+    function addToCart(pid){
+      const p = PRODUCTS.find(x=>x.id===pid);
+      if(!p) return;
+      if(!cart[pid]){
+        cart[pid] = { id:p.id, name:p.name, price:p.price, img:p.img, qty:1 };
+      }else{
+        cart[pid].qty += 1;
+      }
+      saveCart(cart);
+      renderCart();
+      openDrawer();
+    }
+
+    function inc(pid){
+      if(!cart[pid]) return;
+      cart[pid].qty += 1;
+      saveCart(cart);
+      renderCart();
+    }
+    function dec(pid){
+      if(!cart[pid]) return;
+      cart[pid].qty -= 1;
+      if(cart[pid].qty <= 0) delete cart[pid];
+      saveCart(cart);
+      renderCart();
+    }
+    function clearCart(){
+      cart = {};
+      saveCart(cart);
+      renderCart();
+    }
+
+    // --- Drawer controls ---
+    const drawer = qs("#drawer");
+    const backdrop = qs("#backdrop");
+    function openDrawer(){
+      drawer.classList.add("open");
+      backdrop.classList.add("open");
+    }
+    function closeDrawer(){
+      drawer.classList.remove("open");
+      backdrop.classList.remove("open");
+    }
+
+    // --- Newsletter modal controls ---
+    const modal = qs("#modal");
+    const modalBackdrop = qs("#modalBackdrop");
+    const MODAL_KEY = "novawear_modal_seen_v2";
+    function openModal(){
+      if(localStorage.getItem(MODAL_KEY) === "1") return;
+      modal.classList.add("open");
+      modalBackdrop.classList.add("open");
+    }
+    function closeModal(setSeen=true){
+      modal.classList.remove("open");
+      modalBackdrop.classList.remove("open");
+      if(setSeen) localStorage.setItem(MODAL_KEY, "1");
+    }
+    function setupExitIntent(){
+      document.addEventListener("mouseout", (e)=>{
+        if(e.clientY <= 0){ openModal(); }
+      });
+      setTimeout(()=> openModal(), 12000);
+    }
+
+    // --- Reviews slider ---
+    const REVIEWS = [
+      { stars:"★★★★★", text:"顏色真的很奶！穿起來超有氣質，材質也舒服。", who:"Mia｜台北" },
+      { stars:"★★★★★", text:"版型很乾淨，隨便搭都很像韓系穿搭。", who:"Kevin｜台中" },
+      { stars:"★★★★☆", text:"配件小物很加分，整套完成度變超高。", who:"Yuki｜高雄" },
+    ];
+    let rIdx = 0;
+    function renderReview(){
+      const r = REVIEWS[rIdx];
+      qs("#reviewBox").innerHTML = `
+        <div class="stars" style="font-weight:1100; color:rgba(60,20,34,.92); letter-spacing:2px;">${r.stars}</div>
+        <div style="font-weight:900; line-height:1.9;" class="muted">${r.text}</div>
+        <div class="who" style="margin-top:auto; font-weight:1100; color:rgba(60,20,34,.92);">${r.who}</div>
+      `;
+    }
+
+    // --- Active nav link via IntersectionObserver (nav + mobile dock) ---
+    function setupActiveNav(){
+      const links = qsa("#navlinks a");
+      const dockLinks = qsa("#dock a");
+      const map = new Map(links.map(a => [a.getAttribute("href").slice(1), a]));
+      const dockMap = new Map(dockLinks.map(a => [a.getAttribute("href").slice(1), a]));
+      const sections = ["home","categories","products","lookbook","reviews","faq","contact"]
+        .map(id => document.getElementById(id)).filter(Boolean);
+
+      const clear = () => { links.forEach(a=>a.classList.remove("active")); dockLinks.forEach(a=>a.classList.remove("active")); };
+
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(en=>{
+          if(en.isIntersecting){
+            clear();
+            const a = map.get(en.target.id);
+            if(a) a.classList.add("active");
+            const d = dockMap.get(en.target.id);
+            if(d) d.classList.add("active");
+          }
+        });
+      }, { rootMargin: "-40% 0px -55% 0px", threshold: 0.01 });
+
+      sections.forEach(s => io.observe(s));
+    }
+
+    // --- Events ---
+    document.addEventListener("click", (e)=>{
+      const t = e.target.closest("[data-add],[data-inc],[data-dec],[data-like],[data-quick]");
+      if(!t) return;
+
+      if(t.dataset.add) addToCart(t.dataset.add);
+      if(t.dataset.inc) inc(t.dataset.inc);
+      if(t.dataset.dec) dec(t.dataset.dec);
+
+      if(t.dataset.like){
+        alert("已收藏（示範）：" + t.dataset.like);
+      }
+      if(t.dataset.quick){
+        const p = PRODUCTS.find(x=>x.id===t.dataset.quick);
+        if(p) alert(p.name + "\n\n價格：" + fmt(p.price) + "\n\n（快速看示範，可改成真正的 Modal）");
+      }
+    });
+
+    qs("#filters").addEventListener("click", (e)=>{
+      const btn = e.target.closest("button[data-filter]");
+      if(!btn) return;
+      filter = btn.dataset.filter;
+
+      qsa("#filters button").forEach(b=>b.classList.remove("active"));
+      btn.classList.add("active");
+      renderProducts();
+    });
+
+    qs("#sort").addEventListener("change", (e)=>{
+      sort = e.target.value;
+      renderProducts();
+    });
+
+    // Category tiles set filter
+    qsa("[data-filter]").forEach(a=>{
+      a.addEventListener("click", ()=>{
+        const f = a.getAttribute("data-filter");
+        if(!f) return;
+        filter = f;
+        qsa("#filters button").forEach(b=>{
+          b.classList.toggle("active", b.dataset.filter === f);
+        });
+        renderProducts();
+      });
+    });
+
+    // Drawer buttons
+    qs("#openCart").addEventListener("click", openDrawer);
+    qs("#openCartTop").addEventListener("click", openDrawer);
+    qs("#openCartHero").addEventListener("click", openDrawer);
+    qs("#openCartProducts").addEventListener("click", openDrawer);
+    qs("#openCartDock").addEventListener("click", openDrawer);
+
+    qs("#closeDrawer").addEventListener("click", closeDrawer);
+    backdrop.addEventListener("click", closeDrawer);
+
+    qs("#clearCartBtn").addEventListener("click", ()=>{
+      if(confirm("要清空購物車嗎？")) clearCart();
+    });
+
+    qs("#checkoutBtn").addEventListener("click", ()=>{
+      alert("結帳示範：你可以改成導到 /checkout 或串金流。");
+    });
+
+    // Newsletter buttons
+    qs("#openNewsletter").addEventListener("click", ()=>{ localStorage.removeItem(MODAL_KEY); openModal(); });
+    qs("#openNewsletter2").addEventListener("click", ()=>{ localStorage.removeItem(MODAL_KEY); openModal(); });
+    qs("#openNewsletter3").addEventListener("click", ()=>{ localStorage.removeItem(MODAL_KEY); openModal(); });
+
+    qs("#closeModal").addEventListener("click", ()=>closeModal(true));
+    qs("#laterBtn").addEventListener("click", ()=>closeModal(true));
+    modalBackdrop.addEventListener("click", ()=>closeModal(true));
+
+    qs("#claimBtn").addEventListener("click", ()=>{
+      const email = qs("#emailInput").value.trim();
+      if(!email || !email.includes("@")){
+        alert("請輸入有效 Email（示範）");
+        return;
+      }
+      alert("已送出（示範）！折扣碼：NOVA9");
+      closeModal(true);
+    });
+
+    qs("#contactForm").addEventListener("submit", (e)=>{
+      e.preventDefault();
+      alert("已送出（示範）！我們會回覆你。");
+      e.target.reset();
+    });
+
+    // Search (simple demo)
+    qs("#openSearch").addEventListener("click", ()=>{
+      const kw = prompt("輸入關鍵字（示範搜尋商品名稱）：");
+      if(!kw) return;
+      filter = "ALL";
+      qsa("#filters button").forEach(b=>b.classList.toggle("active", b.dataset.filter === "ALL"));
+      const list = PRODUCTS.filter(p=>p.name.includes(kw));
+      qs("#productGrid").innerHTML = list.length ? list.map(productCard).join("") :
+        `<div class="card" style="padding:14px; grid-column: 1 / -1;">
+          <div style="font-weight:1100; color:rgba(60,20,34,.92);">找不到「${kw}」</div>
+          <p class="muted" style="margin:8px 0 0; font-weight:900;">換個關鍵字或回到全部商品看看。</p>
+        </div>`;
+      location.hash = "#products";
+    });
+
+    // Reviews
+    qs("#prevReview").addEventListener("click", ()=>{ rIdx = (rIdx + REVIEWS.length - 1) % REVIEWS.length; renderReview(); });
+    qs("#nextReview").addEventListener("click", ()=>{ rIdx = (rIdx + 1) % REVIEWS.length; renderReview(); });
+    setInterval(()=>{ rIdx = (rIdx + 1) % REVIEWS.length; renderReview(); }, 6500);
+
+    // Init
+    renderProducts();
+    renderCart();
+    renderReview();
+    setupActiveNav();
+    setupExitIntent();
+    qs("#year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
